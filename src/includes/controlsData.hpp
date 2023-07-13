@@ -3,8 +3,9 @@
 #include "dataStream.hpp"
 
 class controlsData
-{   
+{
 
 public:
+    bool request = true;
     void controls();
 };
