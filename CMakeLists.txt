@@ -7,7 +7,9 @@ project (bulk VERSION ${PROJECT_VERSION})
 
 add_executable(bulk src/main.cpp
 src/controlsData.cpp
-src/dataStream.cpp 
+src/models/dataStream.cpp 
+src/models/dataTime.cpp
+src/models/dataStorage.cpp
 )
 
 target_include_directories(bulk

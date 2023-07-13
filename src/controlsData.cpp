@@ -2,10 +2,16 @@
 
 void controlsData::controls()
 {
-    dataStream dataStream;
+    std::string data;
+    dataStream dataStr;
+    dataStorage dataStor{N};
+    dataTime dataT;
+    std::string timeDat = dataT.timeSyst();
+    std::cout << timeDat << std::endl;
 
     while (request)
     {
-        std::cout << dataStream.dataEntry(request) << std::endl;
+        data = dataStr.dataEntry(request);
+        dataStor.dataBulk(data);
     }
 }
