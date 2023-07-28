@@ -4,7 +4,7 @@
 #include <fstream>
 #include "../includes/dataTime.hpp"
 
-class dataStorage
+struct dataStorage
 {
 private:
     int N;
@@ -14,11 +14,7 @@ private:
 
 public:
     std::vector<std::string> bulk;
-    std::string dataBulk(std::string &);
+    std::string dataBulk(std::string strBalk);
     std::string outBalk(std::vector<std::string> &);
-    dataStorage(int p_N)
-    {
-        N = p_N;
-    }
-    ~dataStorage() {}
+    void iniN(int &x);
 };

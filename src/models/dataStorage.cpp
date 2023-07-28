@@ -1,7 +1,7 @@
 #include "../includes/dataStorage.hpp"
 
-std::string dataStorage::dataBulk(std::string &strBalk)
-{
+std::string dataStorage::dataBulk(std::string strBalk)
+{    
     bulk.push_back(strBalk);
 
     if (staticBlock)
@@ -73,4 +73,9 @@ std::string dataStorage::outBalk(std::vector<std::string> &bulk)
         out.close();
     }
     return std::string();
+}
+
+void dataStorage::iniN(int &x)
+{
+    N = x;
 }

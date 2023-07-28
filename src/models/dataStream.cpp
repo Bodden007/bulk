@@ -8,6 +8,6 @@ std::string dataStream::dataEntry(bool &ptrrequest)
         ptrrequest = false;
     }
     step++;
-    Sleep(1000);
+    // Sleep(1000);
     return dataStr;
 }

@@ -5,6 +5,10 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project (bulk VERSION ${PROJECT_VERSION})
 
+set (CMAKE_CXX_STANDARD 20) 
+
+set (BOOST_ROOT "C:/boost") # директория boost
+
 add_executable(bulk src/main.cpp
 src/controlsData.cpp
 src/models/dataStream.cpp 
@@ -17,11 +21,11 @@ target_include_directories(bulk
     includes/
 )
 
-set_target_properties(
-	bulk PROPERTIES
-	CXX_STANDARD 20
-	CXX_STANDARD_REQUIRED ON
-)
+find_package (Boost REQUIRED COMPONENTS program_options REQUIRED)
+if (Boost_FOUND)
+    include_directories (SYSTEM ${Boost_INCLUDE_DIR})    
+    target_link_libraries (bulk ${Boost_LIBRARIES}) 
+endif ()
 
 install(TARGETS bulk RUNTIME DESTINATION bin)
 
