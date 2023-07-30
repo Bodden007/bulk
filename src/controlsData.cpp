@@ -1,25 +1,28 @@
 #include "includes/controlsData.hpp"
-namespace ph = std::placeholders;
+// namespace ph = std::placeholders;
 
 void controlsData::controls()
 {
     std::string data;
+    std::cout << "Параметр: " << N << std::endl;
 
-    dataStorage dataStor;
-
-    std::cout << "Enter the input size: N = " << std::endl;
-    std::cin >> N;
-    dataStor.iniN(N);
-
-    boost::signals2::signal<void(std::string)> sig;
-
-    sig.connect(boost::bind(&dataStorage::dataBulk,
-                            &dataStor, std::placeholders::_1));
+    procesData prData(N);
 
     while (request)
     {
-        std::cout << "Enter the command" << std::endl;
+        std::cout << "Enter the command, out program t" << std::endl;
+
         std::cin >> data;
-        sig(data);
-    }
+
+        if (std::cin.eof())
+        {
+            data = "null";
+            std::cin.clear();
+        }
+        prData.sortData(data);
+        if (data.compare("t") == 0)
+        {
+            request = false;
+        }
+    };
 }

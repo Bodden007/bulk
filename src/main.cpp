@@ -1,9 +1,15 @@
 #include <iostream>
+#include <sstream>
 #include "includes/controlsData.hpp"
 
 int main(int argc, char *argv[])
 {
-    controlsData controlsData;
-    controlsData.controls();
+    int N;
+    std::stringstream strArg;
+    strArg << argv[1];
+    strArg >> N;
+
+    controlsData controlsDat{N};
+    controlsDat.controls();
     return 0;
 }

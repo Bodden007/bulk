@@ -1,19 +1,22 @@
 #pragma once
-#include <boost/signals2.hpp>
+
 #include <iostream>
 #include <memory>
 #include <functional>
 #include <string>
-#include "dataStream.hpp"
-#include "dataTime.hpp"
-#include "dataStorage.hpp"
+#include "procesData.hpp"
 
 class controlsData
 {
 private:
     int N;
+    bool request = true;
 
 public:
-    bool request = true;
+    controlsData(int argN)
+    {
+        N = argN;
+    }
+    ~controlsData(){};
     void controls();
 };

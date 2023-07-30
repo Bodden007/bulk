@@ -11,9 +11,10 @@ set (BOOST_ROOT "C:/boost") # директория boost
 
 add_executable(bulk src/main.cpp
 src/controlsData.cpp
-src/models/dataStream.cpp 
 src/models/dataTime.cpp
-src/models/dataStorage.cpp
+src/models/procesData.cpp
+src/models/writeFaile.cpp
+src/models/outConsole.cpp
 )
 
 target_include_directories(bulk
