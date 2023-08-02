@@ -13,7 +13,7 @@ private:
     int step = 1;
     bool dynamicBlock = false;
     bool staticBlock = true;
-    bool bracketOpen = false;
+    int openBracket = 0;
     std::vector<std::string> bulk;
 
 public:

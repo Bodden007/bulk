@@ -11,6 +11,7 @@ void procesData::sortData(std::string in_data)
             step = 1;
             staticBlock = false;
             dynamicBlock = true;
+            openBracket = 1;
         }
         else if (step == N && in_data.compare("null") != 0)
         {
@@ -31,26 +32,28 @@ void procesData::sortData(std::string in_data)
     }
     else if (dynamicBlock)
     {
-        if (bracketOpen && in_data.compare("{") == 0)
+        if (openBracket == 0 && in_data.compare("{") == 0)
         {
             outBulk(bulk);
-            bracketOpen = false;
+            openBracket++;
         }
-        else if (in_data.compare("}") == 0)
+        else if (in_data.compare("}") == 0 && openBracket == 1)
         {
-            bracketOpen = true;
+            outBulk(bulk);
+            openBracket = 0;
         }
-        else if (in_data.compare("{") == 0)
+        else if (in_data.compare("{") == 0 && openBracket >= 1)
         {
+            openBracket++;
         }
-        else if (bracketOpen && in_data.compare("{") == 0)
+        else if (in_data.compare("}") == 0 && openBracket >= 1)
         {
-
-            bracketOpen = false;
+            openBracket--;
         }
         else if (in_data.compare("null") == 0)
         {
             bulk.clear();
+            openBracket = 0;
         }
         else
         {

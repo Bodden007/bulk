@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-    int N;
+    int N = 3;
     std::stringstream strArg;
     strArg << argv[1];
     strArg >> N;

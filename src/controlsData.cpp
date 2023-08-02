@@ -10,8 +10,6 @@ void controlsData::controls()
 
     while (request)
     {
-        std::cout << "Enter the command, out program t" << std::endl;
-
         std::cin >> data;
 
         if (std::cin.eof())
