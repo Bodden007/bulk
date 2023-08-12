@@ -13,7 +13,7 @@ add_executable(bulk src/main.cpp
 src/controlsData.cpp
 src/models/dataTime.cpp
 src/models/procesData.cpp
-src/models/writeFaile.cpp
+src/models/writeFile.cpp
 src/models/outConsole.cpp
 )
 

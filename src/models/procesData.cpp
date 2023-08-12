@@ -71,11 +71,11 @@ void procesData::outBulk(std::vector<std::string> &bulk)
     std::string fileName = "bulk";
     fileName += timeDat + ".log";
 
-    writeFaile writeF;
+    writeFile writeF;
     outConsole outCon;
 
     boost::signals2::signal<void(std::string)> sig;
-    sig.connect(boost::bind(&writeFaile::outFaile,
+    sig.connect(boost::bind(&writeFile::outFile,
                             &writeF, std::placeholders::_1));
     sig.connect(boost::bind(&outConsole::showConsol,
                             &outCon, std::placeholders::_1));

@@ -3,12 +3,9 @@
 #include <fstream>
 #include "../includes/dataTime.hpp"
 
-class writeFaile
+class writeFile
 {
 
 public:
-    void outFaile(std::string out_balk);
+    void outFile(std::string out_balk);
 };
-
-
-

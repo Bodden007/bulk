@@ -3,7 +3,7 @@
 #include <vector>
 #include <boost/signals2.hpp>
 #include "../includes/dataTime.hpp"
-#include "../includes/writeFaile.hpp"
+#include "../includes/writeFile.hpp"
 #include "../includes/outConsole.hpp"
 
 class procesData
