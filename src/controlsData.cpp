@@ -18,7 +18,7 @@ void controlsData::controls()
             std::cin.clear();
         }
         prData.sortData(data);
-        if (data.compare("t") == 0)
+        if (data.compare("stop") == 0)
         {
             request = false;
         }
